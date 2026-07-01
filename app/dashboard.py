@@ -48,11 +48,6 @@ else:
     st.info("Neutral")
 
 
-if signal == "RISK_OFF":
-    st.error("BUY PUTS / DEFENSIVE")
-else:
-    st.success("NO TRADE")
-
 # Show data
 st.line_chart(df["Close"])
 st.line_chart(df["WR"])
