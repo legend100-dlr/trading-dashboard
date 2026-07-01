@@ -1,0 +1,14 @@
+# Secrets
+.env
+config/settings.py
+
+# Python cache
+__pycache__/
+*.pyc
+
+# System files
+.DS_Store
+
+# Virtual environments (if you add later)
+venv/
+.env/
