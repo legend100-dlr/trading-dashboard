@@ -47,8 +47,6 @@ elif wr < -80:
 else:
     st.info("Neutral")
 
-# Final Decision
-st.header("🚨 FINAL DECISION")
 
 if signal == "RISK_OFF":
     st.error("BUY PUTS / DEFENSIVE")
