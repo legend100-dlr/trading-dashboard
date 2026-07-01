@@ -14,8 +14,22 @@ from core.indicators import williams_r
 
 st.title("📊 Trading Dashboard")
 
+ticker = st.selectbox(
+    "Select Asset",
+    ["SPY", "QQQ", "ES=F"]
+)
+
+st.markdown(
+    f"""
+    <div style='padding:10px;border-radius:8px;background-color:#f0f2f6'>
+        <strong>📊 Current Ticker:</strong> {ticker}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # Load data
-df = load_asset("SPY")
+df = load_asset(ticker)
 
 # VIX
 vix = yf.download("^VIX", period="1mo")
