@@ -46,8 +46,6 @@ signal = compute_signal(df, vix_val)
 
 st.subheader("Debug")
 
- 
-
 st.write(f"VIX: {vix_val}")
 
 st.write(f"Last Close: {df['Close'].iloc[-1]}")
