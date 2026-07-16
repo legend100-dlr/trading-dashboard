@@ -40,6 +40,24 @@ df["WR"] = williams_r(df)
 
 # Signal
 signal = compute_signal(df, vix_val)
+# Signal
+2
+signal = compute_signal(df, vix_val)
+3
+ 
+4
+# Debug section
+5
+st.subheader("Debug")
+6
+ 
+7
+st.write(f"VIX: {vix_val}")
+8
+st.write(f"Last Close: {df['Close'].iloc[-1]}")
+9
+st.write(f"MA50: {df['MA50'].iloc[-1]}")
+
 st.header("🚨 FINAL DECISION")
 
 if signal == "RISK_OFF":
