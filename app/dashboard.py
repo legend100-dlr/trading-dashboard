@@ -41,6 +41,9 @@ df["WR"] = williams_r(df)
 # Signal
 signal = compute_signal(df, vix_val)
 
+st.write("Signal Type:", type(signal))
+st.write("Signal Value:", signal)
+
 st.write(signal)
 
 # Debug section
@@ -55,26 +58,26 @@ st.write(f"MA50: {df['MA50'].iloc[-1]}")
 
 st.header("🏛 PORTFOLIO REGIME")
 
-regime = signal["portfolio_regime"]
-warning = signal["bear_warning"]
-confidence = signal["confidence"]
+# regime = signal["portfolio_regime"]
+# warning = signal["bear_warning"]
+# confidence = signal["confidence"]
 
-if "AGGRESSIVE" in regime:
-    st.success(regime)
-elif "MODERATE" in regime:
-    st.info(regime)
-else:
-    st.warning(regime)
+# if "AGGRESSIVE" in regime:
+#    st.success(regime)
+# elif "MODERATE" in regime:
+#    st.info(regime)
+# else:
+#    st.warning(regime)
 
-st.subheader("⚠️ Bear Market Warning")
+# st.subheader("⚠️ Bear Market Warning")
 
-if warning == "LOW RISK":
-    st.success(warning)
-elif warning == "BUILDING RISK":
-    st.warning(warning)
-else:
-    st.error(warning)
+# if warning == "LOW RISK":
+#    st.success(warning)
+# elif warning == "BUILDING RISK":
+#    st.warning(warning)
+# else:
+#    st.error(warning)
 
-st.subheader("📊 Confidence")
+# st.subheader("📊 Confidence")
 
-st.write(f"{confidence}%")
+# st.write(f"{confidence}%")
