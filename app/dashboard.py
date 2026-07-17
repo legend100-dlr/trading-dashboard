@@ -52,28 +52,28 @@ st.write(f"Last Close: {df['Close'].iloc[-1]}")
 
 st.write(f"MA50: {df['MA50'].iloc[-1]}")
 
-st.header("🚨 FINAL DECISION")
+st.header("🏛 PORTFOLIO REGIME")
 
-if signal == "RISK_OFF":
-    st.error("BUY PUTS / DEFENSIVE")
-    confidence = 0.8
+regime = signal["portfolio_regime"]
+warning = signal["bear_warning"]
+confidence = signal["confidence"]
+
+if "AGGRESSIVE" in regime:
+    st.success(regime)
+elif "MODERATE" in regime:
+    st.info(regime)
 else:
-    st.success("NO TRADE")
-    confidence = 0.6
+    st.warning(regime)
 
-st.write(f"Confidence: {round(confidence*100)}%")
-wr = df["WR"].iloc[-1]
+st.subheader("⚠️ Bear Market Warning")
 
-st.subheader("🎯 Timing")
-
-if wr > -20:
-    st.success("✅ Overbought → good short timing")
-elif wr < -80:
-    st.warning("⚠️ Oversold → watch for bounce")
+if warning == "LOW RISK":
+    st.success(warning)
+elif warning == "BUILDING RISK":
+    st.warning(warning)
 else:
-    st.info("Neutral")
+    st.error(warning)
 
+st.subheader("📊 Confidence")
 
-# Show data
-st.line_chart(df["Close"])
-st.line_chart(df["WR"])
+st.write(f"{confidence}%")
