@@ -41,7 +41,10 @@ df["WR"] = williams_r(df)
 # Signal
 signal = compute_signal(df, vix_val)
 
-st.write("Signal Raw Output:")
+st.write("FUNCTION FILE:")
+st.write(compute_signal.__module__)
+
+st.write("RAW SIGNAL:")
 st.write(signal)
 
 # st.write("Signal Type:", type(signal))
