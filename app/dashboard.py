@@ -41,22 +41,25 @@ df["WR"] = williams_r(df)
 # Signal
 signal = compute_signal(df, vix_val)
 
-st.write("Signal Type:", type(signal))
-st.write("Signal Value:", signal)
-
+st.write("Signal Raw Output:")
 st.write(signal)
+
+# st.write("Signal Type:", type(signal))
+# st.write("Signal Value:", signal)
+
+# st.write(signal)
 
 # Debug section
 
-st.subheader("Debug")
+# st.subheader("Debug")
 
-st.write(f"VIX: {vix_val}")
+# st.write(f"VIX: {vix_val}")
 
-st.write(f"Last Close: {df['Close'].iloc[-1]}")
+# st.write(f"Last Close: {df['Close'].iloc[-1]}")
 
-st.write(f"MA50: {df['MA50'].iloc[-1]}")
+# st.write(f"MA50: {df['MA50'].iloc[-1]}")
 
-st.header("🏛 PORTFOLIO REGIME")
+# st.header("🏛 PORTFOLIO REGIME")
 
 # regime = signal["portfolio_regime"]
 # warning = signal["bear_warning"]
