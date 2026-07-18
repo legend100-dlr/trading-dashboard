@@ -44,6 +44,9 @@ signal = compute_signal(df, vix_val)
 st.write("FUNCTION FILE:")
 st.write(compute_signal.__module__)
 
+st.write("SOURCE FILE:")
+st.write(compute_signal.__code__.co_filename)
+
 st.write("RAW SIGNAL:")
 st.write(signal)
 
