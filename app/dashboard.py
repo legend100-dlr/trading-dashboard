@@ -39,53 +39,29 @@ vix_val = vix["Close"].iloc[-1].item()
 df["WR"] = williams_r(df)
 
 # Signal
-import inspect
+signal = compute_signal(df, vix_val)
 
-st.write("FUNCTION SOURCE:")
-st.code(inspect.getsource(compute_signal))
+st.header("🏛 PORTFOLIO REGIME")
 
-signal = "HELLO_WORLD_12345"
+regime = signal["portfolio_regime"]
+warning = signal["bear_warning"]
+confidence = signal["confidence"]
 
-st.write("RAW SIGNAL:")
-st.write(signal)
+if "AGGRESSIVE" in regime:
+    st.success(regime)
+elif "MODERATE" in regime:
+    st.info(regime)
+else:
+    st.warning(regime)
 
-# st.write("Signal Type:", type(signal))
-# st.write("Signal Value:", signal)
+st.subheader("⚠️ Bear Market Warning")
 
-# st.write(signal)
+if warning == "LOW RISK":
+    st.success(warning)
+elif warning == "BUILDING RISK":
+    st.warning(warning)
+else:
+    st.error(warning)
 
-# Debug section
-
-# st.subheader("Debug")
-
-# st.write(f"VIX: {vix_val}")
-
-# st.write(f"Last Close: {df['Close'].iloc[-1]}")
-
-# st.write(f"MA50: {df['MA50'].iloc[-1]}")
-
-# st.header("🏛 PORTFOLIO REGIME")
-
-# regime = signal["portfolio_regime"]
-# warning = signal["bear_warning"]
-# confidence = signal["confidence"]
-
-# if "AGGRESSIVE" in regime:
-#    st.success(regime)
-# elif "MODERATE" in regime:
-#    st.info(regime)
-# else:
-#    st.warning(regime)
-
-# st.subheader("⚠️ Bear Market Warning")
-
-# if warning == "LOW RISK":
-#    st.success(warning)
-# elif warning == "BUILDING RISK":
-#    st.warning(warning)
-# else:
-#    st.error(warning)
-
-# st.subheader("📊 Confidence")
-
-# st.write(f"{confidence}%")
+st.subheader("📊 Confidence")
+st.write(f"{confidence}%")
