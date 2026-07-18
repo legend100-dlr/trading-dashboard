@@ -39,6 +39,11 @@ vix_val = vix["Close"].iloc[-1].item()
 df["WR"] = williams_r(df)
 
 # Signal
+import inspect
+
+st.write("FUNCTION SOURCE:")
+st.code(inspect.getsource(compute_signal))
+
 signal = compute_signal(df, vix_val)
 
 st.write("FUNCTION FILE:")
