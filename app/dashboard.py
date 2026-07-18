@@ -41,6 +41,11 @@ df["WR"] = williams_r(df)
 # Signal
 signal = compute_signal(df, vix_val)
 
+st.write("DIRECT CALL:")
+st.write(compute_signal(df, vix_val))
+
+st.stop()
+
 st.write("DEBUG SIGNAL:")
 st.write("TYPE:", str(type(signal)))
 st.write("VALUE:", signal)
