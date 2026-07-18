@@ -42,8 +42,8 @@ df["WR"] = williams_r(df)
 signal = compute_signal(df, vix_val)
 
 st.write("DEBUG SIGNAL:")
-st.write(type(signal))
-st.write(signal)
+st.write("TYPE:", str(type(signal)))
+st.write("VALUE:", signal)
 
 st.stop()
 
