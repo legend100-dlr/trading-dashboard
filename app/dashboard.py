@@ -39,7 +39,11 @@ vix_val = vix["Close"].iloc[-1].item()
 df["WR"] = williams_r(df)
 
 # Signal
-signal = compute_signal(df, vix_val)
+signal = compute_signal(df, vix_val
+
+st.write(signal)
+
+st.stop()
 
 st.write("DIRECT CALL:")
 st.write(compute_signal(df, vix_val))
