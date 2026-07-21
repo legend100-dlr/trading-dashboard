@@ -41,21 +41,6 @@ df["WR"] = williams_r(df)
 # Signal
 signal = compute_signal(df, vix_val)
 
-st.write(signal)
-
-st.stop()
-
-st.write("DIRECT CALL:")
-st.write(compute_signal(df, vix_val))
-
-st.stop()
-
-st.write("DEBUG SIGNAL:")
-st.write("TYPE:", str(type(signal)))
-st.write("VALUE:", signal)
-
-st.stop()
-
 regime = signal["portfolio_regime"]
 warning = signal["bear_warning"]
 confidence = signal["confidence"]
