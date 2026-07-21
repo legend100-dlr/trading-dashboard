@@ -1,2 +1,6 @@
 def compute_signal(df, vix):
-    raise Exception("TEST SIGNALS FILE LOADED")
+    return {
+        "portfolio_regime": "TEST MODE",
+        "bear_warning": "TEST MODE",
+        "confidence": 999
+    }
