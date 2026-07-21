@@ -1,7 +1,7 @@
 def compute_signal(df, vix):
 
-    close = float(df["Close"].iloc[-1])
-    ma50 = float(df["MA50"].iloc[-1])
+    close = df["Close"].iloc[-1].item()
+    ma50 = df["MA50"].iloc[-1].item()
 
     score = 0
 
